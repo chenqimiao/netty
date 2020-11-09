@@ -49,6 +49,7 @@ public final class EchoServer {
         }
 
         // Configure the server.
+        // 即使设置了多个主线程，多数情况下也只会用到一个线程
         EventLoopGroup bossGroup = new NioEventLoopGroup(1);
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         final EchoServerHandler serverHandler = new EchoServerHandler();
